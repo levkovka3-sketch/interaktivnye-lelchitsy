@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Газетный детектив — игра на память по публикациям районной газеты «Светлае жыццё».">
+  <title>Газетный детектив — Интерактивные Лельчицы</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .detective-page{min-height:65vh;background:var(--cream);padding:clamp(36px,7vw,80px) 20px}
+    .detective-wrap{max-width:820px;margin:auto}
+    .detective-top{margin-bottom:28px}
+    .detective-top h1{font-size:clamp(34px,5vw,54px);line-height:1.12;letter-spacing:-.04em;margin:0 0 14px}
+    .detective-top p{color:var(--muted)}
+    .case-label{display:inline-block;background:var(--sage-light);color:var(--dark-green);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-bottom:14px}
+    .case-card{background:var(--warm-white);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px);box-shadow:var(--shadow)}
+    .case-progress{font-size:13px;color:var(--muted);font-weight:700;margin:0 0 14px}
+    .case-question{font-size:clamp(22px,3vw,29px);line-height:1.25;margin:0 0 22px}
+    .case-options{display:grid;gap:11px}
+    .case-option{width:100%;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:600 15px Manrope,Arial,sans-serif;cursor:pointer}
+    .case-option:hover:not(:disabled){border-color:var(--sage);background:#f5f7f1}
+    .case-option:disabled{cursor:default;opacity:1}
+    .case-option.is-correct{border-color:#477b52;background:#edf6eb}
+    .case-option.is-wrong{border-color:#c67a6c;background:#fff0ec}
+    .case-feedback{margin:18px 0 0;padding:14px 16px;border-radius:12px;background:var(--sage-light);color:var(--dark-green);font-size:14px}
+    .case-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .case-actions .button{border-radius:10px}
+    .case-actions .button.secondary{background:transparent;color:var(--dark-green);border-color:var(--line)}
+    .case-actions .button.secondary:hover{background:var(--sage-light)}
+    .case-finish{text-align:center}
+    .case-finish h2{font-size:30px;margin-top:0}
+    .case-finish p{color:var(--muted)}
+    .article-link{font-weight:800;color:var(--dark-green)}
+    @media(max-width:600px){.case-card{padding:20px}.case-actions{display:grid}.case-actions .button{text-align:center}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Интерактивные Лельчицы — главная">
+      <img src="images/logo-szh.webp" alt="Логотип газеты «Светлае жыццё»">
+      <span><strong>Интерактивные Лельчицы</strong><small>Узнаём. Вспоминаем. Участвуем.</small></span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="index.html#quiz">Знатоки Лельчицкого края</a>
+      <a href="index.html#then-now">Объектив времени</a>
+      <a href="index.html#feedback">Обратная связь</a>
+    </nav>
+  </header>
+
+  <main class="detective-page">
+    <div class="detective-wrap">
+      <div class="detective-top">
+        <span class="case-label">Досье № 001 · По опубликованной статье</span>
+        <h1>Газетный детектив</h1>
+        <p>Сможешь вспомнить детали материала «Эхо наших слов»? Ответь на четыре вопроса. После каждого ответа появится пояснение, а в конце можно открыть оригинальную публикацию.</p>
+      </div>
+      <section class="case-card" id="case-card" aria-live="polite">
+        <p class="case-progress" id="case-progress">Вопрос 1 из 4</p>
+        <h2 class="case-question" id="case-question">Как называется статья?</h2>
+        <div class="case-options" id="case-options"></div>
+        <p class="case-feedback" id="case-feedback" hidden></p>
+        <div class="case-actions">
+          <button class="button" id="next-question" type="button" hidden>Следующий вопрос</button>
+          <a class="button secondary" href="index.html">Вернуться на главную</a>
+        </div>
+      </section>
+      <section class="case-card case-finish" id="case-finish" hidden>
+        <span class="case-label">Досье закрыто</span>
+        <h2>Расследование завершено!</h2>
+        <p id="case-score"></p>
+        <p>Хочешь проверить себя по первоисточнику? Открой статью и сравни свои ответы с публикацией.</p>
+        <p><a class="article-link" href="https://www.lelchitsy.by/2026/10/eho-nashih-slov/" target="_blank" rel="noopener noreferrer">Читать статью «Эхо наших слов» ↗</a></p>
+        <div class="case-actions" style="justify-content:center">
+          <button class="button" id="restart-case" type="button">Пройти ещё раз</button>
+          <a class="button secondary" href="index.html">На главную</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>Интерактивные Лельчицы</strong><p>Проект в поддержку интереса к родному краю и районной газете.</p></div>
+    <div class="footer-links">
+      <a href="https://lelchitsy.by/" target="_blank" rel="noopener noreferrer">Сайт «Светлае жыццё» ↗</a>
+      <a href="https://t.me/lelchitsy_telegram" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: 'Как называется статья, по которой составлено это досье?',
+        options: ['Эхо наших слов', 'Лельчицы: страницы истории', 'Слово о родном крае'],
+        correct: 0,
+        explanation: 'Верно: материал называется «Эхо наших слов».'
+      },
+      {
+        question: 'В какой рубрике опубликован материал?',
+        options: ['Объектив времени', 'Речь без скверны', 'Люди нашего района'],
+        correct: 1,
+        explanation: 'Статья опубликована в рубрике «Речь без скверны».'
+      },
+      {
+        question: 'Кто выступает собеседником в статье?',
+        options: ['Учитель русского языка', 'Протоиерей Иоанн Полын', 'Редактор районной газеты'],
+        correct: 1,
+        explanation: 'В материале о влиянии речи взрослых на детей выступает протоиерей Иоанн Полын.'
+      },
+      {
+        question: 'Какую главную мысль раскрывает материал?',
+        options: ['Детям важно больше читать газеты', 'Взрослые должны говорить только официально', 'Дети учатся общению, наблюдая за речью взрослых'],
+        correct: 2,
+        explanation: 'Главный акцент — на том, что речь и поведение взрослых служат примером для детей.'
+      }
+    ];
+    let current = 0;
+    let score = 0;
+    let answered = false;
+    const progress = document.getElementById('case-progress');
+    const questionEl = document.getElementById('case-question');
+    const optionsEl = document.getElementById('case-options');
+    const feedbackEl = document.getElementById('case-feedback');
+    const nextButton = document.getElementById('next-question');
+    const card = document.getElementById('case-card');
+    const finish = document.getElementById('case-finish');
+
+    function renderQuestion() {
+      answered = false;
+      const q = questions[current];
+      progress.textContent = 'Вопрос ' + (current + 1) + ' из ' + questions.length;
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = '';
+      feedbackEl.hidden = true;
+      feedbackEl.textContent = '';
+      nextButton.hidden = true;
+      q.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'case-option';
+        button.textContent = option;
+        button.addEventListener('click', () => chooseAnswer(index));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function chooseAnswer(index) {
+      if (answered) return;
+      answered = true;
+      const q = questions[current];
+      const buttons = [...optionsEl.querySelectorAll('button')];
+      buttons.forEach((button, i) => {
+        button.disabled = true;
+        if (i === q.correct) button.classList.add('is-correct');
+        else if (i === index) button.classList.add('is-wrong');
+      });
+      if (index === q.correct) {
+        score++;
+        feedbackEl.textContent = 'Верно! ' + q.explanation;
+      } else {
+        feedbackEl.textContent = 'Не совсем. ' + q.explanation;
+      }
+      feedbackEl.hidden = false;
+      nextButton.textContent = current === questions.length - 1 ? 'Посмотреть результат' : 'Следующий вопрос';
+      nextButton.hidden = false;
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (current < questions.length - 1) {
+        current++;
+        renderQuestion();
+      } else {
+        card.hidden = true;
+        finish.hidden = false;
+        document.getElementById('case-score').textContent = 'Твой результат: ' + score + ' из ' + questions.length + '.';
+      }
+    });
+    document.getElementById('restart-case').addEventListener('click', () => {
+      current = 0;
+      score = 0;
+      finish.hidden = true;
+      card.hidden = false;
+      renderQuestion();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    renderQuestion();
+  </script>
+</body>
+</html>

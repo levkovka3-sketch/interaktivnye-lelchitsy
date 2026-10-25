@@ -14,7 +14,8 @@ document.querySelectorAll(".quiz-card").forEach((card, index) => {
   });
 });
 
-document.querySelector("#reader-poll").addEventListener("submit", (event) => {
+const readerPoll = document.querySelector("#reader-poll");
+if (readerPoll) readerPoll.addEventListener("submit", (event) => {
   event.preventDefault();
   const message = document.querySelector("#poll-message");
   message.textContent = "Спасибо за пример ответа! В этой версии данные не сохраняются и редакции не отправляются. Перед запуском подключим сервис для хранения ответов.";

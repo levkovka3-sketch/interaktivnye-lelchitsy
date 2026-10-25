@@ -160,3 +160,38 @@ body{font-size:18px;line-height:1.75}
     height:260px;
   }
 }
+
+/* Более яркий первый экран и фотография Лельчиц */
+.hero{
+  background:
+    linear-gradient(115deg,rgba(250,248,240,.97) 0%,rgba(242,245,232,.91) 48%,rgba(224,235,215,.76) 100%),
+    radial-gradient(ellipse at 90% 12%,#e3eadb 0,transparent 42%);
+}
+.hero-note{
+  width:min(100%,360px);
+  max-width:360px;
+  padding:14px 14px 22px;
+  border:1px solid rgba(255,255,255,.9);
+  background:linear-gradient(145deg,#fffdf6,#e5eddd);
+  border-radius:28px;
+  transform:rotate(1deg);
+  overflow:hidden;
+}
+.hero-note .hero-city-photo{
+  display:block;
+  width:100%;
+  height:clamp(210px,25vw,300px);
+  object-fit:cover;
+  object-position:center;
+  border-radius:19px;
+  box-shadow:0 8px 22px rgba(35,55,38,.15);
+}
+.hero-note .leaf{display:block;margin:13px 8px 0;font-size:30px}
+.hero-note p{margin:6px 8px 0;font-size:19px;line-height:1.45}
+.hero h1 span{text-shadow:0 2px 0 rgba(255,255,255,.45)}
+.hero .button{box-shadow:0 7px 18px rgba(39,78,54,.2)}
+@media(max-width:600px){
+  .hero-note{width:100%;max-width:390px;padding:12px 12px 18px;transform:none}
+  .hero-note .hero-city-photo{height:240px}
+  .hero-note p{font-size:18px}
+}

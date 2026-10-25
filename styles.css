@@ -144,11 +144,17 @@ body{font-size:18px;line-height:1.75}
   .then-now-photo figcaption span,.then-now-caption{font-size:15px}
 }
 
-/* Не обрезать фотографии памятника В. И. Ленину в блоке «Тогда и сейчас» */
+/* Фотографии памятника В. И. Ленину: одинаковый размер без обрезки */
 #then-now .then-now-entry:first-of-type .then-now-photo img{
+  display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:auto;
+  height:clamp(240px, 35vw, 450px);
+  aspect-ratio:8/5;
   object-fit:contain;
   background:#f7f4eb;
+}
+@media(max-width:600px){
+  #then-now .then-now-entry:first-of-type .then-now-photo img{
+    height:260px;
+  }
 }

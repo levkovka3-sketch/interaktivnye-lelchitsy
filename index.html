@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивные Лельчицы — фотозагадки, история района и обратная связь с редакцией газеты «Светлае жыццё».">
+  <title>Интерактивные Лельчицы</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Интерактивные Лельчицы — главная">
+      <img src="images/logo-szh.webp" alt="Логотип газеты «Светлае жыццё»">
+      <span><strong>Интерактивные Лельчицы</strong><small>Узнаём. Вспоминаем. Участвуем.</small></span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="#quiz">Фотозагадки</a>
+      <a href="#then-now">Тогда и сейчас</a>
+      <a href="#issue">Новый выпуск</a>
+      <a href="#feedback">Обратная связь</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Наш край · наша история · наши люди</p>
+        <h1>Открой Лельчицы<br><span>с новой стороны</span></h1>
+        <p>Проверяйте себя в фотозагадках, вспоминайте знакомые места и делитесь идеями с редакцией районной газеты «Светлае жыццё».</p>
+        <a class="button" href="#quiz">Начать знакомство</a>
+      </div>
+      <div class="hero-note" aria-label="О проекте">
+        <span class="leaf">✳</span>
+        <p>Любимые места.<br>Знакомые лица.<br>Истории, которые нас объединяют.</p>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-heading">
+        <p class="eyebrow">Проверь свою память</p>
+        <h2>Угадай Лельчицы!</h2>
+        <p>Начнём с пробной загадки. Позже мы заменим её фотографией местного места.</p>
+      </div>
+      <article class="quiz-card">
+        <div class="quiz-picture"><span>📷</span><p>Здесь будет фотография или фрагмент снимка</p></div>
+        <div class="quiz-content">
+          <p class="eyebrow">Фотозагадка № 1</p>
+          <h3>Что мы загадаем первым?</h3>
+          <p>Выберем вместе настоящий объект в Лельчицах и добавим к нему варианты ответов.</p>
+          <div class="quiz-options">
+            <button class="answer" data-answer="wrong">Знаменитое место № 1</button>
+            <button class="answer" data-answer="correct">Знаменитое место № 2</button>
+            <button class="answer" data-answer="wrong">Знаменитое место № 3</button>
+          </div>
+          <p id="quiz-result" class="result" aria-live="polite">Выберите вариант ответа — это пока демонстрационный пример.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-muted" id="then-now">
+      <div class="section-heading">
+        <p class="eyebrow">Память места</p>
+        <h2>Лельчицы: тогда и сейчас</h2>
+        <p>Сравниваем архивные снимки с современными фотографиями и сохраняем истории знакомых мест.</p>
+      </div>
+      <div class="photo-pair">
+        <div class="photo-placeholder"><span>Старый снимок</span><small>Добавим архивную фотографию</small></div>
+        <div class="photo-placeholder"><span>Сегодня</span><small>Добавим современную фотографию</small></div>
+      </div>
+    </section>
+
+    <section class="section issue-section" id="issue">
+      <div class="issue-copy">
+        <p class="eyebrow">Читайте и участвуйте</p>
+        <h2>Новый выпуск<br>«Светлае жыццё»</h2>
+        <p>Здесь будет только первая полоса нового номера и небольшой опрос. Полный выпуск остаётся на официальном сайте газеты.</p>
+        <a class="button" href="https://lelchitsy.by/" target="_blank" rel="noopener noreferrer">Продолжить чтение на lelchitsy.by ↗</a>
+      </div>
+      <div class="issue-cover">
+        <span class="cover-label">Первая полоса</span>
+        <strong>Здесь будет<br>обложка нового<br>выпуска</strong>
+        <small>Добавьте изображение после выхода номера</small>
+      </div>
+    </section>
+
+    <section class="section poll-section">
+      <div class="section-heading">
+        <p class="eyebrow">Нам важно ваше мнение</p>
+        <h2>Опрос читателей</h2>
+      </div>
+      <form id="reader-poll" class="poll-card">
+        <fieldset>
+          <legend>Вы уже читали новый выпуск?</legend>
+          <label><input type="radio" name="read" value="Да, уже прочитал(а)" required> Да, уже прочитал(а)</label>
+          <label><input type="radio" name="read" value="Прочитал(а) только часть"> Прочитал(а) только часть</label>
+          <label><input type="radio" name="read" value="Пока нет, собираюсь прочитать"> Пока нет, собираюсь прочитать</label>
+        </fieldset>
+        <fieldset>
+          <legend>Какая рубрика вам понравилась больше всего?</legend>
+          <label><input type="radio" name="rubric" value="Новости района" required> Новости района</label>
+          <label><input type="radio" name="rubric" value="Люди и судьбы"> Люди и судьбы</label>
+          <label><input type="radio" name="rubric" value="Культура и история"> Культура и история</label>
+          <label><input type="radio" name="rubric" value="Здоровье"> Здоровье</label>
+          <label><input type="radio" name="rubric" value="Другая рубрика"> Другая рубрика</label>
+        </fieldset>
+        <label class="comment-label" for="article-comment">Какая статья вам запомнилась и почему? <span>(необязательно)</span></label>
+        <textarea id="article-comment" name="comment" rows="3" placeholder="Напишите несколько слов…"></textarea>
+        <button class="button" type="submit">Проверить опрос</button>
+        <p id="poll-message" class="result" aria-live="polite">Демонстрация: ответы пока не сохраняются и не отправляются редакции.</p>
+      </form>
+    </section>
+
+    <section class="section feedback-section" id="feedback">
+      <div class="section-heading">
+        <p class="eyebrow">На связи с редакцией</p>
+        <h2>Помогите сделать сайт интереснее</h2>
+        <p>В дальнейшем здесь появятся формы для вопросов редакции, предложений тем и отзывов читателей. Перед публикацией сообщения будет проверять редакция.</p>
+      </div>
+      <div class="feedback-grid">
+        <article class="mini-card"><span>✉</span><h3>Вопрос редакции</h3><p>Задайте вопрос, на который хотели бы получить ответ.</p></article>
+        <article class="mini-card"><span>✎</span><h3>Предложить тему</h3><p>Расскажите, о чём вы хотели бы прочитать в газете.</p></article>
+        <article class="mini-card"><span>♡</span><h3>Мнение читателя</h3><p>Поделитесь впечатлениями и идеями для новых разделов.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>Интерактивные Лельчицы</strong><p>Проект в поддержку интереса к родному краю и районной газете.</p></div>
+    <div class="footer-links">
+      <a href="https://lelchitsy.by/" target="_blank" rel="noopener noreferrer">Сайт «Светлае жыццё» ↗</a>
+      <a href="https://www.instagram.com/lelchitsy.by/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://t.me/lelchitsy_telegram" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+      <a href="https://ok.ru/svetlaezhy" target="_blank" rel="noopener noreferrer">Одноклассники ↗</a>
+    </div>
+    <small class="footer-note">Ссылки на социальные сети необходимо проверить перед публикацией. Опрос в этой демонстрационной версии не сохраняет ответы.</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

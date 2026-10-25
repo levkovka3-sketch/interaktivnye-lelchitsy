@@ -143,3 +143,12 @@ body{font-size:18px;line-height:1.75}
   .answer{font-size:16px}
   .then-now-photo figcaption span,.then-now-caption{font-size:15px}
 }
+
+/* Не обрезать фотографии памятника В. И. Ленину в блоке «Тогда и сейчас» */
+#then-now .then-now-entry:first-of-type .then-now-photo img{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  background:#f7f4eb;
+}

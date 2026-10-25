@@ -111,3 +111,35 @@ a.button:hover {
   box-shadow: none;
 }
 
+/* Повышенная читаемость: немного увеличенный текст по всему сайту */
+body{font-size:18px;line-height:1.75}
+.site-header nav a,.footer-links a{font-size:15px}
+.brand strong{font-size:17px}
+.brand small{font-size:13px}
+.hero-copy>p:not(.eyebrow){font-size:19px;line-height:1.75}
+.eyebrow{font-size:13px}
+.section-heading>p:last-child{font-size:17px;line-height:1.75}
+.quiz-content h3{font-size:27px;line-height:1.35}
+.quiz-content>p:not(.eyebrow){font-size:17px;line-height:1.7}
+.answer{font-size:16px;line-height:1.6;padding:14px 16px}
+.result{font-size:15px;line-height:1.7}
+.then-now-photo figcaption strong{font-size:20px}
+.then-now-photo figcaption span{font-size:16px;line-height:1.6}
+.then-now-caption{font-size:17px}
+.mini-card h3{font-size:21px}
+.mini-card p{font-size:16px;line-height:1.75}
+.poll-form label{font-size:17px;line-height:1.7}
+.poll-form h3,.poll-form legend{font-size:21px;line-height:1.4}
+.poll-message{font-size:15px;line-height:1.6}
+.site-footer p{font-size:15px;line-height:1.7}
+.footer-note{font-size:13px;line-height:1.6}
+@media(max-width:600px){
+  body{font-size:17px}
+  .site-header nav a,.footer-links a{font-size:14px}
+  .hero-copy>p:not(.eyebrow){font-size:17px}
+  .section-heading>p:last-child{font-size:16px}
+  .quiz-content h3{font-size:24px}
+  .quiz-content>p:not(.eyebrow),.mini-card p{font-size:16px}
+  .answer{font-size:16px}
+  .then-now-photo figcaption span,.then-now-caption{font-size:15px}
+}

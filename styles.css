@@ -144,8 +144,9 @@ body{font-size:18px;line-height:1.75}
   .then-now-photo figcaption span,.then-now-caption{font-size:15px}
 }
 
-/* Фотографии памятника В. И. Ленину: одинаковый размер без обрезки */
-#then-now .then-now-entry:first-of-type .then-now-photo img{
+/* Фотографии памятника: подгоняем обе фотографии, не обрезая изображение */
+#then-now img[src="images/lenin-togda.jpg"],
+#then-now img[src="images/lenin-seychas.jpg"]{
   display:block;
   width:100%;
   height:clamp(240px, 35vw, 450px);
@@ -154,7 +155,8 @@ body{font-size:18px;line-height:1.75}
   background:#f7f4eb;
 }
 @media(max-width:600px){
-  #then-now .then-now-entry:first-of-type .then-now-photo img{
+  #then-now img[src="images/lenin-togda.jpg"],
+  #then-now img[src="images/lenin-seychas.jpg"]{
     height:260px;
   }
 }

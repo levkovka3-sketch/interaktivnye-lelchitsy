@@ -1,11 +1,16 @@
-const quizResult = document.querySelector("#quiz-result");
-document.querySelectorAll(".answer").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.dataset.answer === "correct") {
-      quizResult.textContent = "Правильно! Это костёл Пресвятого Сердца Христа и Фатимской Божией Матери в Лельчицах. Отлично знаешь родной город!";
-    } else {
-      quizResult.textContent = "Пока не угадано. Попробуй ещё раз! Правильный ответ можно узнать после выбора верного варианта.";
-    }
+document.querySelectorAll(".quiz-card").forEach((card, index) => {
+  const result = card.querySelector(".result");
+  const questionNumber = index + 1;
+  card.querySelectorAll(".answer").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.answer === "correct") {
+        result.textContent = questionNumber === 1
+          ? "Правильно! Это костёл Пресвятого Сердца Христа и Фатимской Божией Матери в Лельчицах. Отлично знаешь родной город!"
+          : "Правильно! Это городской парк в Лельчицах. Отлично знаешь родной город!";
+      } else {
+        result.textContent = "Пока не угадано. Попробуй ещё раз!";
+      }
+    });
   });
 });
 

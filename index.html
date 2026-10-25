@@ -173,5 +173,86 @@
     <small class="footer-note">Ссылки на социальные сети необходимо проверить перед публикацией. Опрос в этой демонстрационной версии не сохраняет ответы.</small>
   </footer>
   <script src="script.js"></script>
+
+<section id="feedback" style="max-width:800px;margin:40px auto;padding:24px;background:#f5f1e6;border-radius:16px;color:#294b38;">
+  <h2>Обратная связь</h2>
+  <p>Помогите нам сделать районную газету интереснее!</p>
+  <div id="polls-container">Загружаем опросы...</div>
+</section>
+
+<script>
+const POLL_API = 'https://script.google.com/macros/s/AKfycbwQ74S9fJhxYUOXVDHVDU8QT1hCgHMO_dyLqMNAl1T5d3_3gEor3TRoWQTVktQM-AyD/exec';
+
+const polls = [
+  {
+    id: '1',
+    question: 'Вы выписываете газету «Светлае жыццё»?',
+    answers: ['Да', 'Нет']
+  },
+  {
+    id: '2',
+    question: 'О чём вам интереснее всего читать на страницах районки?',
+    answers: [
+      'Новости сельского хозяйства',
+      'Авторскую колонку',
+      'О судьбах наших земляков',
+      'Решение проблемных вопросов жителей'
+    ]
+  },
+  {
+    id: '3',
+    question: 'С чего вы обычно начинаете читать новый номер?',
+    answers: [
+      'Ищу знакомые лица и истории о наших людях',
+      'Смотрю программу передач',
+      'Просто листаю и рассматриваю фотографии',
+      'Читаю все от корки до корки'
+    ]
+  }
+];
+
+const pollsContainer = document.getElementById('polls-container');
+
+pollsContainer.innerHTML = polls.map(poll => `
+  <div style="background:white;padding:18px;margin:18px 0;border-radius:12px;">
+    <h3>${poll.question}</h3>
+    <form class="poll-form" data-poll="${poll.id}">
+      ${poll.answers.map((answer, i) => `
+        <label style="display:block;margin:12px 0;">
+          <input type="radio" name="answer" value="${answer.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" required>
+          ${answer}
+        </label>
+      `).join('')}
+      <button type="submit" style="background:#356b4a;color:white;border:0;border-radius:8px;padding:10px 16px;cursor:pointer;">Голосовать</button>
+      <p class="poll-message" aria-live="polite"></p>
+    </form>
+    <div class="poll-results"></div>
+  </div>
+`).join('');
+
+pollsContainer.querySelectorAll('.poll-form').forEach(form => {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = form.querySelector('.poll-message');
+    const answer = new FormData(form).get('answer');
+
+    message.textContent = 'Отправляем голос...';
+
+    try {
+      await fetch(POLL_API, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ poll: form.dataset.poll, answer })
+      });
+      message.textContent = 'Спасибо! Голос отправлен.';
+      form.querySelectorAll('input,button').forEach(el => el.disabled = true);
+    } catch (error) {
+      message.textContent = 'Не удалось отправить голос. Попробуйте позже.';
+    }
+  });
+});
+</script>
+
 </body>
 </html>

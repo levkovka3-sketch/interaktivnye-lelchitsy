@@ -66,3 +66,48 @@ a.button:hover {
   border-color: #d8dfd2;
   box-shadow: none;
 }
+
+/* Спокойная природная палитра */
+:root {
+  --sage: #879b83;
+  --sage-light: #e5eadf;
+  --cream: #f7f4eb;
+  --dark-green: #294b38;
+  --warm-white: #fffdf7;
+}
+
+/* Фон и основной текст */
+body {
+  background: var(--cream);
+  color: var(--dark-green);
+}
+
+/* Спокойные кнопки */
+button,
+.button,
+a.button {
+  background: var(--dark-green);
+  color: var(--warm-white);
+  border: 1px solid var(--dark-green);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Кнопка при наведении */
+button:hover,
+.button:hover,
+a.button:hover {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+/* Карточки */
+.mini-card,
+.poll-card {
+  background: var(--warm-white);
+  border-color: #d8dfd2;
+  box-shadow: none;
+}
+

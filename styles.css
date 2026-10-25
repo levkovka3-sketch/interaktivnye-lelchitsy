@@ -21,3 +21,48 @@
 .then-now-photo figcaption span{font-size:14px;color:#6d796f}
 .then-now-caption{max-width:760px;line-height:1.7;margin:22px auto 0;text-align:center;color:#526257}
 @media(max-width:600px){.photo-pair{grid-template-columns:1fr}.then-now-photo img{aspect-ratio:8/5}}
+
+
+/* Спокойное природное оформление */
+:root {
+  --sage: #879b83;
+  --sage-light: #e5eadf;
+  --cream: #f7f4eb;
+  --dark-green: #294b38;
+  --warm-white: #fffdf7;
+}
+
+/* Общий фон и цвет текста */
+body {
+  background-color: var(--cream);
+  color: var(--dark-green);
+}
+
+/* Спокойные кнопки и ссылки-кнопки */
+button,
+.button,
+a.button {
+  background-color: var(--dark-green);
+  color: var(--warm-white);
+  border: 1px solid var(--dark-green);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Цвет кнопки при наведении */
+button:hover,
+.button:hover,
+a.button:hover {
+  background-color: var(--sage);
+  border-color: var(--sage);
+  color: #ffffff;
+}
+
+/* Мягкие карточки */
+.mini-card,
+.poll-card {
+  background-color: var(--warm-white);
+  border-color: #d8dfd2;
+  box-shadow: none;
+}

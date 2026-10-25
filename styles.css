@@ -267,3 +267,15 @@ body{font-size:18px;line-height:1.75}
   .quiz-card,.mini-card,.then-now-entry,.detective-promo,.answer{transition:none}
   .quiz-card:hover,.mini-card:hover,.then-now-entry:hover,.detective-promo:hover,.answer:hover{transform:none}
 }
+
+.newspaper-slogan{
+  display:block;
+  margin-top:5px;
+  color:#9a752b;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.35;
+}
+@media(max-width:600px){
+  .newspaper-slogan{font-size:11px}
+}

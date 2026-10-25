@@ -107,59 +107,17 @@
       </div>
     </section>
 
-    <section class="section issue-section" id="issue">
-      <div class="issue-copy">
-        <p class="eyebrow">Читайте и участвуйте</p>
-        <h2>Новый выпуск<br>«Светлае жыццё»</h2>
-        <p>Здесь будет только первая полоса нового номера и небольшой опрос. Полный выпуск остаётся на официальном сайте газеты.</p>
-        <a class="button" href="https://lelchitsy.by/" target="_blank" rel="noopener noreferrer">Продолжить чтение на lelchitsy.by ↗</a>
-      </div>
-      <div class="issue-cover">
-        <span class="cover-label">Первая полоса</span>
-        <strong>Здесь будет<br>обложка нового<br>выпуска</strong>
-        <small>Добавьте изображение после выхода номера</small>
-      </div>
-    </section>
+   
+   
+<section class="section feedback-section" id="feedback">
+  <div class="section-heading">
+    <p class="eyebrow">Ваше мнение важно</p>
+    <h2>Обратная связь</h2>
+    <p>Ответьте на три коротких опроса о районной газете «Светлае жыццё».</p>
+  </div>
+  <div id="polls-container">Загружаем опросы...</div>
+</section>
 
-    <section class="section poll-section">
-      <div class="section-heading">
-        <p class="eyebrow">Нам важно ваше мнение</p>
-        <h2>Опрос читателей</h2>
-      </div>
-      <form id="reader-poll" class="poll-card">
-        <fieldset>
-          <legend>Вы уже читали новый выпуск?</legend>
-          <label><input type="radio" name="read" value="Да, уже прочитал(а)" required> Да, уже прочитал(а)</label>
-          <label><input type="radio" name="read" value="Прочитал(а) только часть"> Прочитал(а) только часть</label>
-          <label><input type="radio" name="read" value="Пока нет, собираюсь прочитать"> Пока нет, собираюсь прочитать</label>
-        </fieldset>
-        <fieldset>
-          <legend>Какая рубрика вам понравилась больше всего?</legend>
-          <label><input type="radio" name="rubric" value="Новости района" required> Новости района</label>
-          <label><input type="radio" name="rubric" value="Люди и судьбы"> Люди и судьбы</label>
-          <label><input type="radio" name="rubric" value="Культура и история"> Культура и история</label>
-          <label><input type="radio" name="rubric" value="Здоровье"> Здоровье</label>
-          <label><input type="radio" name="rubric" value="Другая рубрика"> Другая рубрика</label>
-        </fieldset>
-        <label class="comment-label" for="article-comment">Какая статья вам запомнилась и почему? <span>(необязательно)</span></label>
-        <textarea id="article-comment" name="comment" rows="3" placeholder="Напишите несколько слов…"></textarea>
-        <button class="button" type="submit">Проверить опрос</button>
-        <p id="poll-message" class="result" aria-live="polite">Демонстрация: ответы пока не сохраняются и не отправляются редакции.</p>
-      </form>
-    </section>
-
-    <section class="section feedback-section" id="feedback">
-      <div class="section-heading">
-        <p class="eyebrow">На связи с редакцией</p>
-        <h2>Помогите сделать сайт интереснее</h2>
-        <p>В дальнейшем здесь появятся формы для вопросов редакции, предложений тем и отзывов читателей. Перед публикацией сообщения будет проверять редакция.</p>
-      </div>
-      <div class="feedback-grid">
-        <article class="mini-card"><span>✉</span><h3>Вопрос редакции</h3><p>Задайте вопрос, на который хотели бы получить ответ.</p></article>
-        <article class="mini-card"><span>✎</span><h3>Предложить тему</h3><p>Расскажите, о чём вы хотели бы прочитать в газете.</p></article>
-        <article class="mini-card"><span>♡</span><h3>Мнение читателя</h3><p>Поделитесь впечатлениями и идеями для новых разделов.</p></article>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -174,11 +132,7 @@
   </footer>
   <script src="script.js"></script>
 
-<section id="feedback" style="max-width:800px;margin:40px auto;padding:24px;background:#f5f1e6;border-radius:16px;color:#294b38;">
-  <h2>Обратная связь</h2>
-  <p>Помогите нам сделать районную газету интереснее!</p>
-  <div id="polls-container">Загружаем опросы...</div>
-</section>
+
 
 <script>
 const POLL_API = 'https://script.google.com/macros/s/AKfycbwQ74S9fJhxYUOXVDHVDU8QT1hCgHMO_dyLqMNAl1T5d3_3gEor3TRoWQTVktQM-AyD/exec';

@@ -2,9 +2,9 @@ const quizResult = document.querySelector("#quiz-result");
 document.querySelectorAll(".answer").forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.answer === "correct") {
-      quizResult.textContent = "Верно! Это демонстрационный ответ. Позже добавим настоящее место и интересный факт.";
+      quizResult.textContent = "Правильно! Это костёл Пресвятого Сердца Христа и Фатимской Божией Матери в Лельчицах. Отлично знаешь родной город!";
     } else {
-      quizResult.textContent = "Пока нет. Попробуйте ещё раз — это учебный пример, варианты мы заменим.";
+      quizResult.textContent = "Пока не угадано. Попробуй ещё раз! Правильный ответ можно узнать после выбора верного варианта.";
     }
   });
 });

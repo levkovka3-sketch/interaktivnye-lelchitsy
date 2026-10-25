@@ -32,6 +32,22 @@
     .case-finish p{color:var(--muted)}
     .article-link{font-weight:800;color:var(--dark-green)}
     @media(max-width:600px){.case-card{padding:20px}.case-actions{display:grid}.case-actions .button{text-align:center}}
+    /* Увеличенный шрифт для удобного чтения */
+    .detective-top p{font-size:18px;line-height:1.8}
+    .detective-top h1{font-size:clamp(38px,5.5vw,58px)}
+    .case-progress{font-size:15px}
+    .case-question{font-size:clamp(25px,3.3vw,32px);line-height:1.4}
+    .case-option{font-size:17px;line-height:1.65;padding:16px 18px}
+    .case-feedback{font-size:16px;line-height:1.75}
+    .case-actions .button{font-size:16px}
+    .case-finish p{font-size:17px;line-height:1.75}
+    .case-label{font-size:14px}
+    @media(max-width:600px){
+      .detective-top p{font-size:17px}
+      .case-question{font-size:25px}
+      .case-option{font-size:16px;padding:14px 15px}
+      .case-feedback,.case-finish p{font-size:16px}
+    }
   </style>
 </head>
 <body>

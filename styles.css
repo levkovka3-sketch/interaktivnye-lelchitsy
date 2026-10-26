@@ -376,3 +376,24 @@ body{font-size:18px;line-height:1.75}
 .quick-games-heading h2{font-family:Georgia,serif}
 .quick-game,.quiz-card,.mini-card,.then-now-entry{border-radius:17px}
 @media(max-width:760px){.hero{background-position:58% center}.hero-copy>p:not(.eyebrow){max-width:95%}.hero-visual .hero-city-photo{height:220px}}
+
+
+/* Панель газеты с оригинальным логотипом вместо условной фотографии газеты */
+.hero-newspaper-panel{display:flex;flex-direction:column;justify-content:center;align-self:center;min-height:300px;padding:clamp(24px,3vw,40px);color:#244332;text-decoration:none;background:linear-gradient(145deg,#fffdf6,#f0eedf);border:1px solid #e4ddc9;border-radius:20px;box-shadow:0 22px 55px rgba(20,49,33,.28);transform:rotate(.5deg)}
+.hero-newspaper-panel:hover{transform:translateY(-3px);box-shadow:0 27px 60px rgba(20,49,33,.32)}
+.hero-newspaper-brand{display:flex;align-items:center;gap:17px}
+.hero-newspaper-brand img{display:block;width:clamp(76px,9vw,115px);height:auto;max-height:120px;object-fit:contain;flex:0 0 auto}
+.hero-newspaper-brand div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.hero-newspaper-brand span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#98742b;font-weight:800}
+.hero-newspaper-brand strong{font-family:Georgia,serif;font-size:clamp(24px,3vw,37px);line-height:1.08;color:#25392c}
+.hero-newspaper-brand small{font-size:13px;color:#697366}
+.hero-newspaper-rule{height:1px;background:linear-gradient(90deg,#b38a35,#dcd3b6,transparent);margin:24px 0 18px}
+.hero-newspaper-panel>p{font-family:Georgia,serif;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:#46584a;margin:0 0 25px}
+.hero-newspaper-link{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-radius:12px;background:#244b37;color:#fff;font-weight:800;font-size:14px}
+.about-newspaper-section{padding-top:12px}
+.about-newspaper-card{display:grid;grid-template-columns:minmax(120px,210px) 1fr;align-items:center;gap:clamp(22px,4vw,48px);padding:clamp(24px,4vw,44px);background:linear-gradient(120deg,#fffdf6,#f1efdf);border:1px solid #e2dfd1;border-radius:22px;box-shadow:0 12px 34px rgba(36,67,48,.08)}
+.about-newspaper-card>img{display:block;width:100%;max-width:180px;height:auto;object-fit:contain;justify-self:center}
+.about-newspaper-card h2{margin:4px 0 10px;color:#244b37;font-family:Georgia,serif;font-size:clamp(25px,3vw,36px)}
+.about-newspaper-card p:not(.eyebrow){max-width:720px;color:#536456;line-height:1.7}
+.about-newspaper-card .button{display:inline-flex;margin-top:8px}
+@media(max-width:760px){.hero-newspaper-panel{min-height:0;transform:none;padding:22px}.hero-newspaper-brand img{width:76px}.hero-newspaper-brand strong{font-size:25px}.about-newspaper-card{grid-template-columns:1fr;text-align:center}.about-newspaper-card>img{max-width:125px}.about-newspaper-card .button{justify-content:center}}

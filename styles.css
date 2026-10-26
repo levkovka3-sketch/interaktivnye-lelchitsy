@@ -406,3 +406,10 @@ body{font-size:18px;line-height:1.75}
 
 /* Убираем плашку «Наш край — Лельчицы рядом» с фотографии */
 .hero-photo-label{display:none!important;}
+
+
+/* Удобство игры на телефонах и клавиатуре */
+.difference-target{min-width:42px;min-height:42px;display:grid;place-items:center;touch-action:manipulation;}
+.difference-target:focus-visible,.difference-reset:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #d6ae4d;outline-offset:3px;}
+.difference-message{min-height:1.6em;line-height:1.6;}
+@media(max-width:600px){.difference-pictures{grid-template-columns:1fr;gap:18px}.difference-picture img{width:100%;height:auto}.difference-image-wrap{position:relative}.difference-topline{flex-wrap:wrap;gap:12px;align-items:center}.difference-reset{min-height:44px}}

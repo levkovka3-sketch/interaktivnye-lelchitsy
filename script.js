@@ -41,7 +41,6 @@ if (readerPoll) readerPoll.addEventListener("submit", (event) => {
       found.add(key);
       target.classList.add("found");
       target.disabled = true;
-      target.textContent = "✓";
       score.textContent = String(found.size);
       if (found.size === targets.length) {
         message.textContent = "Ура! Ты нашёл все пять отличий. Отличное внимание к деталям!";
@@ -56,8 +55,8 @@ if (readerPoll) readerPoll.addEventListener("submit", (event) => {
     targets.forEach((target) => {
       target.classList.remove("found");
       target.disabled = false;
-      target.textContent = ({sun:"☀",bird:"♥",flower:"✿",star:"★",leaf:"❧"})[target.dataset.difference];
+      target.textContent = "";
     });
-    message.textContent = "Подсказка: внимательно осмотри вторую картинку. Нажимай на добавленные детали.";
+    message.textContent = "Найди пять отличий на второй фотографии и нажимай прямо на места, где заметил изменения.";
   });
 })();

@@ -479,3 +479,72 @@ body{font-size:18px;line-height:1.75}
 .target-bag{left:25%;top:50%}
 .target-bird{left:79%;top:73%}
 @media(max-width:600px){.difference-target{width:34px;height:34px}}
+
+
+/* Новая фирменная палитра: синий и красный в поддержку логотипа газеты */
+:root{
+  --brand-blue:#1857a4;
+  --brand-blue-dark:#123d78;
+  --brand-blue-soft:#e8f0fb;
+  --brand-red:#c51e32;
+  --brand-red-dark:#a7192b;
+  --brand-red-soft:#fbecef;
+}
+/* Шапка и ссылки */
+.site-header{border-bottom:3px solid var(--brand-blue);box-shadow:0 5px 24px rgba(24,87,164,.08)}
+.brand strong{color:var(--brand-blue-dark)}
+.site-header nav a,.footer-links a{transition:color .18s ease}
+.site-header nav a:hover{color:var(--brand-red)}
+.site-header nav .nav-newspaper{background:var(--brand-blue);border:1px solid var(--brand-blue)}
+.site-header nav .nav-newspaper:hover{background:var(--brand-red);border-color:var(--brand-red)}
+/* Первый экран: синий как основной фирменный акцент, красный — точечно */
+.hero{border-color:#d5e1f2;background-color:#f5f8fd;background-image:radial-gradient(ellipse at 88% 18%,rgba(197,30,50,.10),transparent 32%),linear-gradient(110deg,#fbfcff 0%,#eef4fc 60%,#e4edf9 100%);box-shadow:0 16px 42px rgba(24,87,164,.09)}
+.hero h1{color:var(--brand-blue-dark)}
+.hero h1 span{color:var(--brand-red)}
+.hero .eyebrow{color:var(--brand-red)}
+.hero-copy>p:not(.eyebrow){color:#465873}
+.button,.hero .button{background:var(--brand-blue);border-color:var(--brand-blue);box-shadow:0 7px 18px rgba(24,87,164,.16)}
+.button:hover,.hero .button:hover{background:var(--brand-blue-dark);border-color:var(--brand-blue-dark)}
+.hero .button-light{background:#fff;color:var(--brand-blue-dark);border-color:#c8d8ee}
+.hero .button-light:hover{background:var(--brand-red);border-color:var(--brand-red);color:#fff}
+/* Акценты на карточках и заголовках */
+.section-heading h2{color:var(--brand-blue-dark)}
+.section-heading .eyebrow{background:var(--brand-blue-soft);color:var(--brand-blue)}
+.quick-games-heading h2{color:var(--brand-blue-dark)}
+.quick-game{border-color:#d6e2f2}
+.quick-game:hover{border-color:var(--brand-blue)}
+.quick-game.featured-game{background:linear-gradient(135deg,var(--brand-blue),var(--brand-blue-dark));border-color:var(--brand-blue)}
+.quick-game-icon{background:var(--brand-blue-soft);color:var(--brand-blue)}
+.quick-arrow{color:var(--brand-red)}
+.featured-game .quick-game-icon{background:#fff;color:var(--brand-red)}
+.explore-card-shade{background:linear-gradient(0deg,rgba(15,43,81,.88),rgba(15,43,81,.04) 78%)}
+.explore-card-copy small{color:#ffd8df}
+/* Фотозагадки и ответы */
+.quiz-card{border-color:#d6e2f2;box-shadow:0 12px 30px rgba(24,87,164,.08)}
+.quiz-content{background:linear-gradient(145deg,#fff 0%,#f6f9fe 100%)}
+.answer{border-color:#d4e0f0;border-left-color:var(--brand-blue);background:#f9fbff}
+.answer:hover{background:var(--brand-blue-soft);border-color:var(--brand-blue)}
+.result{color:var(--brand-blue-dark)}
+/* Исторические фотографии и игра «Найди отличия» */
+.section-muted{background:#edf3fb}
+.then-now-entry{border-color:#d5e1f2;background:linear-gradient(145deg,#fff,#f1f6fd)}
+.then-now-entry h3{background:var(--brand-blue-soft);color:var(--brand-blue-dark);border-left-color:var(--brand-red)}
+.then-now-caption{background:#fbeff1;border-left-color:var(--brand-red)}
+.difference-game{border-color:#d2dff1;background:linear-gradient(145deg,#fff,#edf4fd);box-shadow:0 12px 30px rgba(24,87,164,.09)}
+.difference-picture figcaption{color:var(--brand-blue-dark)}
+.difference-topline strong{color:var(--brand-red)}
+.difference-message{background:var(--brand-blue-soft);color:var(--brand-blue-dark)}
+.difference-target.found{background:rgba(24,87,164,.42);border-color:#fff;box-shadow:0 0 0 3px rgba(197,30,50,.24)}
+/* Блок о газете и обратная связь */
+.about-newspaper-card{background:linear-gradient(120deg,#fff,#edf4fd);border-color:#d6e2f2;box-shadow:0 12px 34px rgba(24,87,164,.08)}
+.about-newspaper-card h2{color:var(--brand-blue-dark)}
+.about-newspaper-card .eyebrow{color:var(--brand-red)}
+.detective-promo{background:linear-gradient(115deg,#fff,#edf4fd);border-top-color:var(--brand-red)}
+.mini-card{border-color:#d6e2f2;border-top-color:var(--brand-blue)}
+.poll-form input[type=radio]{accent-color:var(--brand-blue)}
+.poll-form button{background:var(--brand-blue)!important;border-color:var(--brand-blue)!important}
+.poll-form button:hover{background:var(--brand-red)!important;border-color:var(--brand-red)!important}
+/* Фирменный нижний колонтитул */
+.site-footer{background:linear-gradient(115deg,var(--brand-blue-dark),#102f5d);border-top:5px solid var(--brand-red)}
+.footer-note{border-top-color:#496c9b}
+@media(prefers-reduced-motion:reduce){.site-header nav a{transition:none}}

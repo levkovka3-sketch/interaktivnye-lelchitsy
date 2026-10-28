@@ -578,7 +578,7 @@ body{background:#fff}
 
 
 /* Уведомление о cookie — в фирменном синем и белом оформлении */
-.cookie-banner{position:fixed;z-index:1000;left:18px;right:18px;bottom:18px;max-width:1180px;margin:0 auto;padding:22px 24px;background:#fff;color:#172033;border:1px solid #d6e2f2;border-radius:18px;box-shadow:0 16px 55px rgba(18,45,83,.22);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.cookie-banner{position:fixed;z-index:1000;left:50%;right:auto;bottom:18px;width:min(calc(100% - 36px),1080px);max-width:none;transform:translateX(-50%);margin:0;padding:22px 24px;background:#fff;color:#172033;border:1px solid #d6e2f2;border-radius:18px;box-shadow:0 16px 55px rgba(18,45,83,.22);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
 .cookie-banner[hidden],.cookie-settings[hidden]{display:none!important}
 .cookie-banner h2,.cookie-settings h2{margin:0 0 8px;font-size:clamp(20px,2vw,25px);line-height:1.25;color:#123d78}
 .cookie-banner p,.cookie-settings p{margin:0 0 8px;color:#465873;font-size:14px;line-height:1.55}
@@ -599,7 +599,7 @@ body{background:#fff}
 .cookie-settings-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:22px}
 .cookie-reopen{position:fixed;z-index:999;left:12px;bottom:12px;border:1px solid #1857a4;border-radius:999px;background:#fff;color:#1857a4;padding:9px 13px;font:700 12px Manrope,Arial,sans-serif;box-shadow:0 4px 16px rgba(18,45,83,.12);cursor:pointer}
 .cookie-reopen[hidden]{display:none!important}
-@media(max-width:760px){.cookie-banner{left:10px;right:10px;bottom:10px;padding:18px;grid-template-columns:1fr;gap:12px;max-height:85vh;overflow:auto}.cookie-actions{justify-content:stretch}.cookie-action{flex:1 1 140px}.cookie-action-link{flex:0 0 auto}.cookie-settings-actions .cookie-action{flex:1 1 130px}}
+@media(max-width:760px){.cookie-banner{left:50%;right:auto;bottom:10px;width:calc(100% - 20px);transform:translateX(-50%);padding:18px;grid-template-columns:1fr;gap:12px;max-height:85vh;overflow:auto}.cookie-actions{justify-content:stretch}.cookie-action{flex:1 1 140px}.cookie-action-link{flex:0 0 auto}.cookie-settings-actions .cookie-action{flex:1 1 130px}}
 
 
 /* Читаемое оформление страниц политик */

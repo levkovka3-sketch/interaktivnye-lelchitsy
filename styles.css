@@ -555,3 +555,9 @@ body{font-size:18px;line-height:1.75}
 .hero-newspaper-link:hover{background:var(--brand-blue-dark)!important;border-color:var(--brand-blue-dark)}
 .about-newspaper-card .button{background:var(--brand-blue)!important;border-color:var(--brand-blue)!important;color:#fff!important}
 .about-newspaper-card .button:hover{background:var(--brand-blue-dark)!important;border-color:var(--brand-blue-dark)!important}
+
+/* Кнопка «Сайт газеты»: без красной заливки при наведении и нажатии */
+.site-header nav .nav-newspaper:hover,
+.site-header nav .nav-newspaper:focus,
+.site-header nav .nav-newspaper:focus-visible,
+.site-header nav .nav-newspaper:active{background:var(--brand-blue)!important;border-color:var(--brand-blue)!important;color:#fff!important}

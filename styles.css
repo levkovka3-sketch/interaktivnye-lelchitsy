@@ -561,3 +561,12 @@ body{font-size:18px;line-height:1.75}
 .site-header nav .nav-newspaper:focus,
 .site-header nav .nav-newspaper:focus-visible,
 .site-header nav .nav-newspaper:active{background:var(--brand-blue)!important;border-color:var(--brand-blue)!important;color:#fff!important}
+
+
+/* Сохраняем читаемый тёмный текст в ответах фотозагадки после нажатия */
+.quiz-card .answer,
+.quiz-card .answer:hover,
+.quiz-card .answer:focus,
+.quiz-card .answer:focus-visible,
+.quiz-card .answer:active,
+.quiz-card .answer:disabled{color:#17212b!important;}

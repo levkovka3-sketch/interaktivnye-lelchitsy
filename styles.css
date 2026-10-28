@@ -548,3 +548,10 @@ body{font-size:18px;line-height:1.75}
 .site-footer{background:linear-gradient(115deg,var(--brand-blue-dark),#102f5d);border-top:5px solid var(--brand-red)}
 .footer-note{border-top-color:#496c9b}
 @media(prefers-reduced-motion:reduce){.site-header nav a{transition:none}}
+
+
+/* Синие кнопки перехода на официальный сайт газеты */
+.hero-newspaper-link{background:var(--brand-blue)!important;color:#fff!important;border:1px solid var(--brand-blue);transition:background .18s ease,border-color .18s ease}
+.hero-newspaper-link:hover{background:var(--brand-blue-dark)!important;border-color:var(--brand-blue-dark)}
+.about-newspaper-card .button{background:var(--brand-blue)!important;border-color:var(--brand-blue)!important;color:#fff!important}
+.about-newspaper-card .button:hover{background:var(--brand-blue-dark)!important;border-color:var(--brand-blue-dark)!important}
